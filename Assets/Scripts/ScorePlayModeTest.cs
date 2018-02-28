@@ -4,40 +4,52 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using DG.Tweening;
 
 public class ScorePlayModeTest
 {
+	private GameObject obj;
+	private Score script;
 
-	[Test]
-	public void ScorePlayModeTestValue ()
+	[SetUp]
+	public void Setup ()
 	{
 		// 初期化
-		var obj = new GameObject ("ScoreObject", new [] {
+		obj = new GameObject ("ScoreObject", new [] {
 			typeof(Score)
 		});
-		var script = obj.GetComponent<Score> ();
+		script = obj.GetComponent<Score> ();
 		Assert.NotNull (script);
 		script.scoreText = obj.GetComponent<Text> (); // 何故Textを持つ?
 		Debug.Log (obj.GetComponent<Text> ());
 		script.scoreText.text = 0.ToString ("00000");
 		Assert.AreEqual (0, script.Value);
+	}
 
+
+	[Test]
+	public void ScorePlayModeTestValue ()
+	{
 		// 点数を足したときのテスト
 		int expectedSum = script.Value + script.addValue;
 		script.Value += script.addValue;
 		Assert.AreEqual (expectedSum, script.Value);
 
+		// 初期化
+		script.Value = 0;
+		Assert.AreEqual (0, script.Value);
+
 	}
 
-	/*
-	// A UnityTest behaves like a coroutine in PlayMode
-	// and allows you to yield null to skip a frame in EditMode
+	// DoTweenのAPIを使っていても問題なく動作するか確認。
 	[UnityTest]
-	public IEnumerator ScorePlayModeTestWithEnumeratorPasses ()
+	public IEnumerator CountupWithAnime ()
 	{
-		// Use the Assert class to test conditions.
-		// yield to skip a frame
-		yield return null;
+		var tweener = script.UpWithAnime ();
+		tweener.OnComplete (() => Assert.AreEqual (script.addValue, script.Value));
+
+		yield return new WaitForSeconds (0.5f);
+
+		Assert.AreEqual (script.addValue, script.Value);
 	}
-	*/
 }

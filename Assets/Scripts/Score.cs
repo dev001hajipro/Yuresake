@@ -12,11 +12,10 @@ public class Score : MonoBehaviour
 	public int addValue = 10;
 	public Text scoreText;
 
-	// TODO: DOTween非同期のテスト追加。テストの書きかたが複雑そうなので後回し。
-	public void UpWithAnime ()
+	public Tweener UpWithAnime ()
 	{
 		int endValue = Value + addValue;
-		DOTween.To (() => Value, (n) => Value = n, endValue, 0.5f);
+		return DOTween.To (() => Value, (n) => Value = n, endValue, 0.5f);
 	}
 
 	public int Value {
