@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 61425981855151654}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: ObstacleScoreTriggerArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: -2}
+  autoStart: 1
 --- !u!212 &212112785213960572
 SpriteRenderer:
   m_ObjectHideFlags: 1
