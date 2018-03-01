@@ -10,7 +10,13 @@ using DG.Tweening;
 public class Score : MonoBehaviour
 {
 	public int addValue = 10;
+	// TODO private.
 	public Text scoreText;
+
+	void Start ()
+	{
+		scoreText = this.gameObject.GetComponent<Text> ();
+	}
 
 	public Tweener UpWithAnime ()
 	{
