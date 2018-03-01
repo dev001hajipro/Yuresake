@@ -35,8 +35,11 @@ sysinfo.txt
 *.unitypackage
 
 # depend on Assets.
-Assets/Demigiant/
+Assets/Demigiant
+Assets/Demigiant.meta
 Assets/InitTestScene*
+Assets/PostProcessing
+Assets/PostProcessing.meta
 
 
 !docs/Build

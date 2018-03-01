@@ -23,7 +23,9 @@ public class Player : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		rb2d.AddForce (movement * speed);
+		//rb2d.AddForce (movement * speed);
+		//rb2d.velocity = movement * speed;
+		rb2d.AddForce (movement * speed, ForceMode2D.Impulse);
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
