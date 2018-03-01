@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 559123508}
   - component: {fileID: 559123507}
   - component: {fileID: 559123506}
+  - component: {fileID: 559123512}
   - component: {fileID: 559123511}
   m_Layer: 0
   m_Name: Player
@@ -465,6 +466,17 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &559123512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559123505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad581ad838a6c8f4a9e6bd97414d31ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &642488625
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +587,7 @@ GameObject:
   - component: {fileID: 742809036}
   - component: {fileID: 742809035}
   m_Layer: 0
-  m_Name: Bottom
+  m_Name: BottomDeadZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +600,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742809033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -8, z: 0}
+  m_LocalPosition: {x: 0, y: -5.56, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 247345145}
@@ -603,7 +615,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
