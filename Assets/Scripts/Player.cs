@@ -30,8 +30,10 @@ public class Player : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.name.Equals ("Bottom")) {
+		if (other.name.Equals ("BottomDeadZone")) {
 			Debug.Log ("Destroy player.");
+			const int SCENE_RESULT = 2;
+			this.gameObject.GetComponent<Utility> ().LoadScene (2);
 		}
 		if (other.CompareTag ("ObstacleScoreTriggerArea")) {
 			Debug.Log ("Score! Obstacle.");
