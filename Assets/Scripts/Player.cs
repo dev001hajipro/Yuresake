@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
+		Store.Score = 0;
 	}
 
 	void Update ()
@@ -31,12 +32,9 @@ public class Player : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.name.Equals ("BottomDeadZone")) {
-			Debug.Log ("Destroy player.");
-			const int SCENE_RESULT = 2;
-			this.gameObject.GetComponent<Utility> ().LoadScene (2);
+			this.gameObject.GetComponent<Utility> ().LoadScene (Utility.SCENE_RESULT);
 		}
 		if (other.CompareTag ("ObstacleScoreTriggerArea")) {
-			Debug.Log ("Score! Obstacle.");
 			GameObject.Find ("ScoreText").GetComponent<Score> ().UpWithAnime ();
 		}
 	}

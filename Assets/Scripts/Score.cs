@@ -21,6 +21,11 @@ public class Score : MonoBehaviour
 	public Tweener UpWithAnime ()
 	{
 		int endValue = Value + addValue;
+		Store.Score = endValue;
+		// ハイスコア更新
+		if (Store.HiScore < Store.Score) {
+			Store.HiScore = Store.Score;
+		}
 		return DOTween.To (() => Value, (n) => Value = n, endValue, 0.5f);
 	}
 
