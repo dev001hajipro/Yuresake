@@ -1,6 +1,9 @@
 ﻿# Yuresake ゆれ避け
-
 シンプルな避けゲー
+
+## WebGL版デモ
+https://dev001hajipro.github.io/Yuresake/
+
 
 ## 依存しているAssets
 このプロジェクトを動かすためには、DoTweenをアセットストアからインストールする必要があります。
@@ -11,5 +14,3 @@
 button SE.
 - https://www.youtube.com/watch?v=HCqRNkiE0lI
 
-## デモ
-https://dev001hajipro.github.io/Yuresake/
